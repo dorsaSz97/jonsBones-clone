@@ -2,7 +2,7 @@
 
 This is my 11th project which is a clone of JonsBones Website.
 
-## Screenshots
+## Screenshot
 
 <img src="img/sc.webp" width="100%" height="100%"/>
 
