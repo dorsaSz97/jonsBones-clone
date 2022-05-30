@@ -1,0 +1,55 @@
+.btn {
+  color: inherit;
+  border: 1px solid;
+  margin-top: 3.2rem;
+
+  display: flex;
+  align-items: stretch;
+
+  overflow: hidden;
+  transition: all 0.5s;
+
+  &__left {
+    padding: 2rem;
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    flex-grow: 3;
+  }
+
+  &__right {
+    padding: 2rem;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+  &--dark {
+    background-color: transparent;
+    color: $color-white;
+    border-color: $color-white;
+
+    .btn__left {
+      border-right: 1px solid $color-white;
+    }
+    // backdrop-filter: blur(4.5px);
+  }
+  &--light {
+    background-color: transparent;
+    color: $color-primary--dark-2;
+    border-color: $color-primary--dark-2;
+
+    .btn__left {
+      border-right: 1px solid $color-primary--dark-2;
+    }
+  }
+
+  &:hover &__left > span {
+    animation: moveup 1s;
+  }
+
+  &:hover &__right > span {
+    animation: moveright 1s;
+  }
+}

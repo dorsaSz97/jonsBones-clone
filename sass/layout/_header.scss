@@ -1,0 +1,186 @@
+.header {
+  font-family: $ff-text;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  background-color: $color-blur;
+  backdrop-filter: blur(5.2px);
+  color: $color-white;
+  padding: 0 9.6rem;
+  border-bottom: 1px solid $color-white;
+  z-index: 100000;
+
+  transition: all 0.4s ease-in-out;
+
+  display: flex;
+
+  &__nav {
+    flex-grow: 1;
+  }
+
+  &__logo-box {
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__logo {
+    width: 15rem;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .navigation {
+    height: 100%;
+
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      height: 100%;
+    }
+    &--left {
+      .navigation__list {
+        justify-content: flex-start;
+      }
+    }
+    &--right {
+      .navigation__list {
+        justify-content: flex-end;
+      }
+    }
+
+    &__item {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__item > a:link,
+    &__item > a:visited {
+      height: 100%;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: inherit;
+      letter-spacing: 4px;
+      padding: 2rem 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__dropdown {
+      padding: 4rem 8rem;
+      position: absolute;
+      top: -800%;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      visibility: 0;
+      background-color: $color-primary--light-1;
+      transition: all 0.3s ease-in-out;
+    }
+    .dropdown {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 8rem;
+
+      &__categories {
+        display: flex;
+        width: 100%;
+        gap: 2rem;
+
+        .categorie {
+          cursor: pointer;
+          flex-basis: 100%;
+          background-color: $color-product-bg;
+          height: 23rem;
+          padding: 2rem 1rem;
+          transition: all 0.4s;
+
+          &:hover {
+            background-color: #f8f9fc;
+
+            .categorie__image-box figcaption .icon-box .icon {
+              animation: moveright 1s;
+            }
+            .categorie__image-box img {
+              transform: scale(1.1);
+            }
+          }
+
+          &__image-box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            figcaption {
+              text-align: center;
+              font-size: 1.3rem;
+              font-weight: 600;
+              text-transform: uppercase;
+              display: flex;
+              justify-content: space-between;
+              overflow: hidden;
+
+              .icon-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+              }
+
+              .icon {
+                overflow: hidden;
+                font-size: 1.2rem;
+              }
+            }
+          }
+
+          &__img {
+            // width: 10rem;
+            opacity: 0;
+            transition: all 0.3s, opacity 0.3s 0.4s;
+            width: 100%;
+            height: 15rem;
+            object-fit: contain;
+          }
+        }
+      }
+
+      &__links {
+        display: flex;
+        gap: 5rem;
+        justify-content: space-between;
+
+        & > * {
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    #dropdownItem:hover > .navigation__dropdown {
+      top: calc(100% - 1px);
+      opacity: 1;
+      visibility: 1;
+    }
+    #dropdownItem:hover > .navigation__dropdown .categorie__img {
+      opacity: 1;
+    }
+  }
+
+  .icon {
+    font-size: 3rem;
+    font-weight: 100;
+
+    &--downarr {
+      font-size: 1.8rem;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.carousel {
+  box-shadow: 0 3rem 3rem rgba($color-black, 0.2);
+  width: 100%;
+  overflow: hidden;
+
+  .slides {
+    display: flex;
+    width: calc(50rem * 12);
+    animation: scroll 40s infinite;
+  }
+
+  .slide {
+    max-width: 50rem;
+    height: 50rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

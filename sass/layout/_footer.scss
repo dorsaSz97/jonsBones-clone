@@ -1,0 +1,68 @@
+.footer {
+  padding: $section-v-padding-s;
+  background-color: $color-primary--light-2;
+
+  &__content {
+    display: flex;
+    gap: 10rem;
+  }
+
+  .socials > ul {
+    display: flex;
+    gap: 2rem;
+
+    & > li > a:hover > i {
+      background-color: lighten($color-primary--dark-2, 10%);
+    }
+
+    i {
+      transition: all 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 4rem;
+      width: 4rem;
+      border-radius: 100%;
+      color: $color-white;
+      font-size: 2rem;
+      background-color: $color-primary--dark-2;
+    }
+  }
+
+  .nav {
+    // flex-grow:2;
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid $color-primary--dark-2;
+    }
+
+    .lists {
+      display: flex;
+      gap: 8rem;
+
+      .col-1,
+      .col-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        & > li > a:link,
+        & > li > a:visited {
+          color: inherit;
+          font-weight: 600;
+          font-size: 1.5rem;
+          letter-spacing: 2px;
+          transition: all 0.4s;
+        }
+        & > li > a:hover,
+        & > li > a:active {
+          color: $color-primary--dark-1;
+        }
+      }
+    }
+  }
+}
